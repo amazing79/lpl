@@ -1,0 +1,96 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing:content-box;
+}
+
+:root{
+    --bg:#633974;
+    --bg-container: #a569bd;
+    --bg-hover:#d2b4de;
+    --font-c:#fafafa; 
+    --mb:8px;
+    --pd-default:10px;
+    --border-r:8px;
+    --w-container:500px; /*Minimo recomendado es 450px*/
+    --h-container:400px;
+}
+
+.container{
+    max-width: var(--w-container);
+    height: var(--h-container);
+    width: 100%;
+    margin: 50px auto;
+    border: solid 2px transparent;
+    border-radius: var(--border-r);
+    background-color: var(--bg-container);
+    padding: var(--pd-default);
+    box-shadow: 1px 1px 15px rgba(0,0, 0, .5);
+}
+
+html{
+    background-color: var(--bg);
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    color: var(--font-c);
+    padding: 0 5px;
+}
+
+.widget{
+    display: flex;
+    gap: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.carrusel{
+    height: var(--h-container);
+    width: 80%;
+    overflow: hidden;
+    scroll-behavior:smooth;
+}
+
+.nav{
+   width: 20%;
+   min-width: 120px;
+}
+
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: var(--pd-default);
+    width: 90%;
+    font-weight: bold;
+    border-radius: var(--border-r);
+    cursor: pointer;
+    margin-bottom: var(--mb);
+    text-align: left;
+}
+
+li:hover{
+    background-color: var(--bg);
+    transition: background-color 700ms ease-in-out;
+}
+
+h1{
+    margin-top: var(--mb);
+}
+
+a{
+    all: unset;
+    display: block;
+}

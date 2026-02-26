@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Promises</title>
+    <script src="promises.js" defer></script>
+</head>
+<style>
+    .container{
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+    }
+
+     ul {
+        padding: 2px;
+    }
+
+    li{
+        list-style: none;
+        border-bottom: thin solid #cfcece;
+        padding: 8px  10px;
+    }
+
+    li:hover{
+        background-color: #F2F2F2;
+    }
+</style>
+<body>
+    <div class="container">
+        <section class="title">
+            <h1>Free Book Searcher</h1>
+        </section>    
+        <section class="form__input">
+            <label for="search">Filtrar:</label>
+            <input type="text" name="filter" id="search" placeholder="ingrese texto a buscar" />
+        </section>
+        <section class="form__results">
+            <h1>Encontrados</h1>
+            <ul id="books"></ul> 
+        </section>
+    </div>
+</body>
+</html>

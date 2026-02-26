@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+</head>
+<style>
+    .container{
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    h1, h4{
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    ul {
+        padding: 2px;
+    }
+
+    li{
+        list-style: none;
+        border-bottom: thin solid #cfcece;
+        padding: 8px  10px;
+    }
+
+    li:hover{
+        background-color: #F2F2F2;
+    }
+
+
+    a {
+        all: unset;
+        display: block;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .buttons{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+
+    button{
+        min-height: 30px;
+        border: none;
+        min-width: 70px;
+        border-radius: 5px;
+        background-color: #278BF5;
+        color: #fafafa;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #63ABF8;
+        color: #FFF;
+    }
+</style>
+<body>
+    <main>
+        <div class="container">
+            <h1>Mini Pokedex</h1>
+            <h6></h6>
+            <ul id="list">
+               <li><a href="#">Test</a></li>
+               <li><a href="#">Test</a></li>
+               <li><a href="#">Test</a></li>
+               <li><a href="#">Test</a></li>
+            </ul>
+            <h4>Total de Pokemones: <span id="count">0</span></h6>
+            <div class="buttons">
+                <button id="prev" type="button">prev</button>
+                <button id="next" type="button">next</button>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="pocketapi.js"></script>
+</html>

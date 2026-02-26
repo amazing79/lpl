@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<style>
+    /*Estilos para el menu*/
+header{
+    background-color: #f65c78;
+    width: 100%;
+    position: absolute;
+}
+
+ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 30px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul li:hover{
+    background-color: #ffa357;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+/*Estilos principales*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#E5E5E5;
+    font-family: 'Roboto', sans-serif;
+}
+
+i{
+    color: whitesmoke;
+    font-size: 20px;
+    padding-top: 15px;
+    display: inline-block;
+}
+
+.main{
+    width: 100%;
+    max-width: 1024px;
+    height: 1000px;
+    background-color: whitesmoke;
+    margin: 0px auto;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 3px 5px rgba(2, 9, 12, 0.671);
+}
+
+.menu{
+    position: fixed;
+    top:20%;
+    left: 0;
+    z-index: 99;
+    display: inline-block;
+}
+
+
+.menu .option-menu{
+    display: flex;
+    width: 40px;
+    height: 50px;
+    padding-left: 10px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(2, 9, 12, 0.671);
+    transition: width .5s ease;
+   box-shadow: 0px 3px 3px rgba(2, 9, 12, 0.671);
+}
+
+.menu .option-menu:hover{
+    width:340px;
+}
+
+.menu .option-menu:hover p{
+    opacity: 1;
+}
+
+.menu p{
+    white-space: nowrap;
+    padding: 15px;
+    margin-left: 20px;
+    opacity: 0;
+    transition: opacity 1s ease;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.menu a{
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.menu a:hover,
+.menu a:active,
+.menu a:visited{
+    color: white;
+}
+
+.instagram{
+    background-color: #e1306c;
+}
+
+.facebook{
+    background-color: #3b5998;
+}
+
+.twitter{
+    background-color: #1da1f2;
+}
+
+.git-hub{
+    background-color: #333;
+}
+
+main{
+    height: 800px;
+    position:absolute;
+    margin: 0 auto;
+    padding:20px;
+    top:100px;
+    text-align:justify;
+}
+/*Estilos para el footer*/
+footer{
+    height: 200px;
+    background-color:#3c4245;
+    position:absolute;
+}
+
+@media screen and (max-width:700px){
+    ul li {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+</style>
+<body>
+    <div class="menu">
+        <div class="option-menu facebook">
+            <i class="fab fa-facebook"></i><p><a href="#">Seguime en Facebook</a></p>
+        </div>
+        <div class="option-menu instagram">
+            <i class="fab fa-instagram"></i><p><a href="#">Mis fotos en Instagram</a></p>
+        </div>
+        <div class="option-menu twitter">
+            <i class="fab fa-twitter-square"></i><p><a href="#">Mis contenido en Twitter</a></p>
+        </div>
+        <div class="option-menu git-hub">
+            <i class="fab fa-github-square"></i><p><a href="#"> Mis proyectos en Git-hub </a></p>
+        </div>
+    </div>
+    <div class="main">
+        <header>
+            <nav>
+                <ul class="nav">
+                    <li>Inicio</li>
+                    <li>Proyectos</li>
+                    <li>Blog</li>
+                    <li>Acerca de</li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+         <p> Lorem ipsum dolor sit amet consectetur adipiscing elit sed nec cum, integer pharetra aliquam sem eu proin justo tristique fringilla. Et eu lectus nec ut molestie sem varius pretium laoreet, sapien dignissim integer viverra venenatis primis lacus ultrices, porta bibendum orci volutpat malesuada dis fringilla blandit. Odio maecenas gravida ultricies habitasse facilisis eros, praesent iaculis suspendisse nam habitant.
+          </p>
+          <p>
+Accumsan vehicula tincidunt ultrices velit venenatis aliquet non lectus dui euismod laoreet lacus, ridiculus integer volutpat ligula himenaeos dignissim gravida mus conubia sollicitudin nam. Elementum blandit augue cubilia justo mollis vestibulum sed, ad rhoncus aliquet semper velit torquent enim molestie, vulputate fermentum litora libero a eros. Condimentum blandit congue pellentesque etiam egestas interdum consequat ultrices ad lectus diam, justo porttitor ut tempor massa porta natoque imperdiet montes vulputate inceptos litora, accumsan faucibus malesuada turpis pretium facilisi ante id iaculis curae.</p>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>

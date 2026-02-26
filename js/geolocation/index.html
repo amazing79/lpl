@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mapa con Geolocalización</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  ></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+    .reload-btn {
+      position: absolute;
+      top: 100px;
+      left: 10px;
+      z-index: 1000;
+      background: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div id="map">Cargando mapa...</div>
+  <div class="reload-btn" onclick="getLocation()">📍 Actualizar ubicación</div>
+
+  <script>
+    let map;
+    let marker;
+    let baseMaps;
+
+    function initMap(lat, lon) {
+      if (!map) {
+        // Crear mapa
+        map = L.map('map').setView([lat, lon], 15);
+
+        // Capas base
+        const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        });
+
+        const carto = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+          attribution: '© Carto'
+        });
+
+        baseMaps = {
+          "OpenStreetMap": osm,
+          "Carto Light": carto
+        };
+
+        osm.addTo(map);
+        L.control.layers(baseMaps).addTo(map);
+      }
+
+      if (marker) {
+        marker.setLatLng([lat, lon]);
+      } else {
+        marker = L.marker([lat, lon]).addTo(map).bindPopup('¡Estás aquí!').openPopup();
+      }
+
+      map.setView([lat, lon], 15);
+    }
+
+    function getLocation() {
+      if ('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(
+          (pos) => {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            initMap(lat, lon);
+          },
+          (err) => {
+            alert('Error obteniendo ubicación: ' + err.message);
+          },
+          {
+            enableHighAccuracy: true,
+            maximumAge: 30000,
+            timeout: 27000,
+          }
+        );
+      } else {
+        alert('La geolocalización no está disponible en este navegador.');
+      }
+    }
+
+    // Obtener ubicación al cargar
+    getLocation();
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    dialog::backdrop{
+        background-color: rgba(0, 0, 0, .75);
+        backdrop-filter: blur(1px);
+    }
+
+    dialog{
+        padding: 15px;
+        border-radius: 8px;
+    }
+</style>
+<body>
+    <button popovertarget="my-dialog">Mostrar Dialogo</button>
+
+    <dialog id="my-dialog" popover>
+        <p>Hemos abierto el dialogo usando el atributo popovertargetaction. Podemos tambien hacerlo usando js</p>
+        <p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog" target="_blank" >Mas info</a></p>
+        <button popovertarget="my-dialog" popovertargetaction="hide">Cerrar</button>
+    </dialog>
+</body>
+
+</html>
