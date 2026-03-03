@@ -55,6 +55,10 @@ class Usuario
         return $this->fechaNacimiento ?? new \DateTime();
     }
 
+    public function getFechaNacimientoPantalla(): string
+    {
+        return date("Y-m-d", $this->fechaNacimiento->getTimestamp());
+    }
     public function getNombreCompleto(): string
     {
         return $this->nombre . ' ' . $this->apellido;

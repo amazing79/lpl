@@ -12,5 +12,7 @@
             "email": "ignacioja@hotmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=8.0.0"
+    }
 }
