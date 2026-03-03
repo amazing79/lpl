@@ -1,0 +1,16 @@
+{
+    "name": "amazing79/lpl",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Amazing79\\Lpl\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "amazing79",
+            "email": "ignacioja@hotmail.com"
+        }
+    ],
+    "require": {}
+}
