@@ -1,0 +1,149 @@
+:root {
+  --card-bg: #1a2740;
+  --card-header-bg: #1e3054;
+  --accent-blue: #4a9eff;
+  --accent-yellow: #ffd166;
+  --text-primary: #ffffff;
+  --text-secondary: #8ba3c7;
+  --divider-color: #2e4270;
+  --today-bg: #2e4a7a;
+  --today-border: #4a9eff;
+  --day-card-bg: #243352;
+  --stat-bg: #243352;
+  --high-temp: #ffffff;
+  --low-temp: #8ba3c7;
+  --border-radius-card: 16px;
+  --border-radius-day: 10px;
+  --border-radius-stat: 8px;
+}
+
+.forecast-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius-card);
+  padding: 1rem;
+  color:var(--text-primary);
+  max-width: 500px;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.card-header {
+  background-color: var(--card-header-bg);
+  display: flex;
+  justify-content: space-between;
+  padding: .7rem;
+  border-radius: var(--border-radius-stat);
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.city {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.region {
+  color: var(--text-secondary);
+  font-size:12px;
+  margin-top: 0;
+}
+
+.current-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.temp-value {
+  color: var(--accent-yellow);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.temp-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.divider {
+  background-color: var(--divider-color);
+  height: 1px;
+  
+}
+
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 10px;
+}
+
+.day-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: var(--border-radius-day);
+  text-align: center;
+  padding: .5rem;
+  background-color: var(--day-card-bg);
+}
+
+.day-card.today {
+    background-color: var(--today-bg);
+    border: 1px solid var(--today-border);
+}
+
+.day-name {
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    font-size: 10px;
+}
+
+.day-card.today .day-name {
+    color: var(--accent-blue);
+}
+
+.day-icon {
+    font-size: 21px;
+}
+
+.day-high {
+    color: var(--high-temp);
+}
+
+.day-low {
+  color: var(--low-temp);
+  font-size: 12px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border-radius: var(--border-radius-stat);
+  background-color: var(--stat-bg);
+  padding: .5rem;
+}
+
+.stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    font-size: 12px;
+}

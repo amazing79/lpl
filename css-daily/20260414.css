@@ -1,0 +1,179 @@
+:root {
+  --card-bg: #ffffff;
+  --header-bg: #0f4c81;
+  --accent: #f59e0b;
+  --accent-light: #fef3c7;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-on-dark: #ffffff;
+  --category-title-color: #0f4c81;
+  --item-checked-label: #94a3b8;
+  --item-unchecked-label: #1e293b;
+  --check-checked-bg: #0f4c81;
+  --check-unchecked-bg: #ffffff;
+  --check-unchecked-border: #cbd5e1;
+  --check-mark-color: #ffffff;
+  --progress-track: #e2e8f0;
+  --progress-fill: #f59e0b;
+  --divider: #e2e8f0;
+  --category-gap: #f8fafc;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  background-color: #f8f0fc;
+  }
+  
+.checklist-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  overflow: clip;
+  width: 520px;
+}
+
+.card-header {
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  padding: .4rem;
+  align-items: center
+}
+
+
+.header-left {
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+}
+
+.card-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.card-title {
+  color:var(--text-on-dark);
+  line-height: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.card-subtitle {
+  color:var(--accent);
+  font-weight: bolder;
+  margin-top: 5px;
+  font-size: .8rem;
+}
+
+.progress-badge {
+  background-color: rgba(207, 224, 250, 0.308);
+  padding: .5rem .8rem;
+  border-radius: 10px;
+  font-weight: bolder;
+}
+
+.progress-num {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+.progress-label {
+  color: var(--accent-light);
+}
+
+.progress-bar-track {
+  height: 6px;
+  width: 100%;
+  background-color: var(--progress-track);
+}
+
+.progress-bar-fill {
+  height: 6px;
+  width: 80%;
+  background-color: var(--progress-fill);
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  justify-content: space-around;
+  color:var(--category-title-color);
+  font-weight: bold;
+}
+
+.category {
+  border-right: 1px solid var(--divider);
+  font-size: 11px;
+  padding: 0 1rem;
+}
+
+.category:last-child {
+    border: none;
+}
+
+.category-title {
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: bolder;
+}
+
+.item-list {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+   margin-bottom: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+
+.check-box {
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    padding: 1px;
+}
+
+.checked-box {
+    background-color: var(--check-checked-bg);
+    border: 1px solid var(--check-checked-bg);
+    text-align: center;
+}
+
+.checked-box::after {
+  content:'\2713';
+  color:var(--check-mark-color);
+
+}
+
+.unchecked-box {
+    background-color: var(--check-unchecked-bg);
+    border: 1px solid var(--check-unchecked-border);
+}
+
+
+.item-label {
+  color: inherit;
+  
+}
+
+.item.checked .item-label {
+    text-decoration: line-through;
+    color: var(--item-checked-label);
+}
+
+.item.unchecked .item-label {
+  color: var(--text-primary);
+}

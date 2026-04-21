@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+:root {
+  --card-bg: #1a1d2e;
+  --card-border: #2e3150;
+  --header-bg: #22263d;
+  --footer-bg: #1e2138;
+  --label-color: #7b82aa;
+  --total-color: #ffffff;
+  --badge-bg: #1a3a2a;
+  --badge-text: #34d27b;
+  --asset-name-color: #dde1f5;
+  --asset-ticker-color: #7b82aa;
+  --asset-price-color: #c8ccee;
+  --up-color: #34d27b;
+  --down-color: #f04f5a;
+  --bar-bg: #2e3150;
+  --bar-btc: #f7931a;
+  --bar-eth: #627eea;
+  --bar-sol: #9945ff;
+  --bar-dot: #e6007a;
+  --icon-btc-bg: #2e2010;
+  --icon-btc-color: #f7931a;
+  --icon-eth-bg: #101828;
+  --icon-eth-color: #627eea;
+  --icon-sol-bg: #1e1030;
+  --icon-sol-color: #9945ff;
+  --icon-dot-bg: #2a0818;
+  --icon-dot-color: #e6007a;
+  --divider-color: #2e3150;
+  --stat-value-color: #dde1f5;
+  --accent-color: #9945ff;
+  --positive-color: #34d27b;
+}
+
+body{
+     font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.portfolio-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: clip;
+    border: 1px solid var(--card-border);
+    font-weight: bold;
+    font-size: 12px;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.card-header {
+    background-color: var(--header-bg);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+    text-transform: uppercase;
+    color: var(--label-color);
+    font-size: 10px;
+}
+
+.total-value {
+    color: var(--total-color);
+    font-size: 26px;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.change-badge {
+    background-color: var(--badge-bg);
+    padding: .2rem .5rem;
+    border-radius: 12px;
+    color:var(--badge-text);
+}
+
+.change-label {
+    color: var(--label-color);
+    font-size: 10px;
+}
+
+.asset-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-row {
+    padding: .5rem 1rem;
+    border-top: 1px solid var(--divider-color);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 2fr 7fr 1fr;
+    align-items: center;
+}
+
+.asset-row:last-child {
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.asset-icon {
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px 2px;
+    line-height: 16px;
+}
+
+.btc {
+    background-color: var(--icon-btc-bg);
+    color: var(--icon-btc-color);
+}
+
+.eth {
+    background-color: var(--icon-eth-bg);
+    color: var(--icon-eth-color);
+}
+
+.sol {
+    background-color: var(--icon-sol-bg);
+    color: var(--icon-sol-color);
+}
+
+.dot {
+    background-color: var(--icon-dot-bg);
+    color: var(--icon-dot-color);
+}
+
+.asset-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-name {
+    color: var(--asset-name-color);
+}
+
+.asset-ticker {
+    color: var(--asset-ticker-color);
+}
+
+.asset-bar-wrap {
+    height: 6px;
+    border-radius: 5px;
+    background-color: var(--asset-ticker-color);
+    overflow: clip;
+}
+
+.asset-bar {
+    height: 6px;
+    border-radius: 5px;
+}
+
+.bar-btc {
+    background-color: var(--bar-btc);
+    width: 70%;
+}
+
+.bar-eth {
+    background-color: var(--bar-eth);
+    width: 50%;
+}
+
+.bar-sol {
+    background-color: var(--bar-sol);
+    width: 30%;
+}
+
+.bar-dot {
+    background-color: var(--bar-dot);
+    width: 20%;
+}
+
+.asset-values {
+    display: flex;
+    flex-direction: column;
+}
+
+.asset-price {
+    color: var(--asset-price-color);
+}
+
+.asset-change {
+    margin-left: auto;
+}
+
+.asset-change.up {
+    color: var(--up-color);
+}
+
+.asset-change.down {
+    color: var(--down-color);
+}
+
+.card-footer {
+    background-color: var(--footer-bg);
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 3fr;
+    padding: 1rem;
+    gap: 20px;
+}
+
+.footer-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-stat:first-child {
+    justify-self: start;
+    align-items: start;
+}
+
+.footer-stat:last-child {
+    justify-self: end;
+    align-items: end;
+}
+
+.stat-label {
+    color:var(--label-color);
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.stat-value {
+    color: var(--stat-value-color);
+}
+
+.stat-value.accent {
+    color: var(--accent-color);
+}
+
+.stat-value.positive {
+    color:var(--positive-color);
+}
+
+.footer-divider {
+    border-right: 1px solid var(--divider-color);
+}
