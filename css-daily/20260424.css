@@ -126,7 +126,7 @@ body{
 
 .app-row {
     display: grid;
-    grid-template-columns: 1fr 2fr 5fr 1fr 2fr;
+    grid-template-columns: 0fr 3fr 5fr 1fr 2fr;
     align-items: center;
     border-bottom: 1px solid var(--row-border);
     padding: .7rem 1rem;
@@ -140,6 +140,7 @@ body{
     height: 2rem;
     width: 4px;
     border-radius: 10px;
+    margin-right: 15px;
 }
 
 .app-offer .app-status-bar {
