@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*, *::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+:root {
+  --bg-card: #ffffff;
+  --border-card: #e8e8e8;
+  --header-bg: #1a1a2e;
+  --header-text: #ffffff;
+  --subtitle-text: #a0a8c0;
+  --icon-bg: #2d2d4e;
+
+  --pill-interview-bg: #2563eb;
+  --pill-interview-text: #ffffff;
+  --pill-offer-bg: #16a34a;
+  --pill-offer-text: #ffffff;
+
+  --row-border: #f0f0f0;
+  --company-text: #1a1a2e;
+  --role-text: #6b7280;
+  --date-text: #9ca3af;
+
+  --bar-offer: #16a34a;
+  --bar-interview: #2563eb;
+  --bar-applied: #f59e0b;
+  --bar-rejected: #ef4444;
+
+  --badge-offer-bg: #dcfce7;
+  --badge-offer-text: #15803d;
+  --badge-interview-bg: #dbeafe;
+  --badge-interview-text: #1d4ed8;
+  --badge-applied-bg: #fef3c7;
+  --badge-applied-text: #b45309;
+  --badge-rejected-bg: #fee2e2;
+  --badge-rejected-text: #dc2626;
+
+  --progress-track-bg: #f3f4f6;
+  --progress-fill-bg: #2563eb;
+  --progress-label-text: #374151;
+  --progress-pct-text: #2563eb;
+  --padding: 1rem;
+}
+
+body{
+     font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.tracker {
+    width: 520px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    overflow: clip;
+    border: 1px solid var(--border-card);
+    margin: 20px auto;
+    
+}
+
+.tracker-header {
+    background-color: var(--header-bg);
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.header-icon {
+    font-size: 20px;
+    background-color: var(--icon-bg);
+    padding: calc(var(--padding)/2);
+    border-radius: 8px;
+}
+
+.tracker-title {
+    color: var(--header-text);
+    font-size: 20px;
+}
+
+.tracker-subtitle {
+    color: var(--subtitle-text);
+    font-size: 12px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-pill {
+    color: var(--pill-offer-text);
+    font-size: 10px;
+    padding: calc(var(--padding)/3) .8rem;
+    border-radius: 12px;
+}
+
+.stat-interviews {
+    background-color: var(--pill-interview-bg);
+    color: var(--pill-interview-text);
+}
+
+.stat-offers {
+    background-color: var(--pill-offer-bg);
+    color: var(--pill-offer-text);
+}
+
+.applications {
+    display: flex;
+    flex-direction: column;
+}
+
+.app-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 5fr 1fr 2fr;
+    align-items: center;
+    border-bottom: 1px solid var(--row-border);
+    padding: .7rem 1rem;
+}
+
+.app-row:last-child {
+    font-weight: bold;
+}
+
+.app-status-bar {
+    height: 2rem;
+    width: 4px;
+    border-radius: 10px;
+}
+
+.app-offer .app-status-bar {
+    background-color: var(--bar-offer);
+}
+
+.app-interview .app-status-bar {
+    background-color: var(--bar-interview);
+
+}
+.app-applied .app-status-bar {
+    background-color: var(--bar-applied);
+}
+.app-rejected .app-status-bar {
+    background-color: var(--bar-rejected);
+}
+
+.app-company {
+    font-weight: bold;
+    font-size: 12px;
+    color:var(--company-text);
+}
+
+.app-role {
+    font-size: 12px;
+    color: var(--role-text);
+}
+
+.app-date {
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--date-text);
+}
+
+.app-badge {
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: .3rem;
+    text-align: center;
+}
+
+.badge-offer {
+    background-color: var(--badge-offer-bg);
+    color: var(--badge-offer-text);
+}
+.badge-interview {
+    background-color: var(--badge-interview-bg);
+    color: var(--badge-interview-text);
+}
+.badge-applied {
+    background-color: var(--badge-applied-bg);
+    color: var(--badge-applied-text);
+}
+.badge-rejected {
+    background-color: var(--badge-rejected-bg);
+    color: var(--badge-rejected-text);
+}
+
+.progress-section {
+    padding: 1rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--progress-label-text);
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.progress-pct {
+    color: var(--progress-pct-text);
+}
+
+.progress-track {
+    width: 100%;
+    height: 5px;
+    border-radius: 10px;
+    background-color: var(--progress-track-bg);
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 62%;
+    height: 5px;
+    background-color: var(--progress-fill-bg);
+     border-radius: 10px;
+}
