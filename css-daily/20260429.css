@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*, *::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+:root {
+  --bg-card: #ffffff;
+  --bg-header: #1e3a2f;
+  --bg-plant-healthy: #f0faf3;
+  --bg-plant-warning: #fffbf0;
+  --bg-plant-urgent: #fff5f5;
+  --border-healthy: #a8d8b0;
+  --border-warning: #f5d87e;
+  --border-urgent: #f5a8a8;
+  --color-title: #ffffff;
+  --color-subtitle: #a8c9b5;
+  --color-plant-name: #1e3a2f;
+  --color-plant-type: #7a9e8a;
+  --color-water-text-healthy: #3a8a55;
+  --color-water-text-warning: #b07c10;
+  --color-water-text-urgent: #c0392b;
+  --color-task-text: #4a6a55;
+  --color-task-date: #9ab5a5;
+  --streak-bg: #2e5c42;
+  --streak-number-color: #7eeaa0;
+  --streak-label-color: #a8c9b5;
+  --dot-healthy: #3cb371;
+  --dot-warning: #f0c040;
+  --dot-urgent: #e05050;
+  --bar-bg: #e0ece5;
+  --bar-high: #3cb371;
+  --bar-medium: #6abf85;
+  --bar-low: #f0c040;
+  --bar-critical: #e05050;
+  --task-done-color: #3cb371;
+  --task-pending-color: #f0c040;
+  --footer-border: #dceee3;
+}
+
+body{
+     font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #fafafa;
+}
+
+
+.tracker {
+  background-color: var(--bg-card);
+  width: 520px;
+  font-size: 12px;
+  border-radius:14px;
+  overflow: clip;
+  margin: 40px auto;
+}
+
+.tracker-header {
+  background-color: var(--bg-header);
+  padding: .9rem 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  gap: 15px;
+}
+
+.leaf-icon {
+  font-size: 28px;
+}
+
+.tracker-title {
+  color:var(--color-title);
+  font-size: 18px;
+}
+
+.tracker-subtitle {
+  color: var(--color-subtitle);
+  font-weight: bold;
+  word-spacing: 2px;
+}
+
+.streak-badge {
+  background-color: var(--streak-bg);
+  padding: .2rem .9rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.streak-number {
+  font-size: 20px;
+  font-weight: bold;
+  color:var(--streak-number-color);
+}
+
+.streak-label {
+  color: var(--streak-label-color);
+  font-size: 10px;
+}
+
+.plants-grid {
+  padding: .9rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--color-plant-type);
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.plant-healthy {
+  border-color: var(--border-healthy);
+  background-color: var(--bg-plant-healthy);
+}
+
+.plant-warning {
+  border-color: var(--border-warning);
+  background-color: var(--bg-plant-warning);
+}
+
+.plant-urgent {
+  border-color: var(--border-urgent);
+  background-color: var(--bg-plant-urgent);
+}
+
+.plant-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plant-emoji {
+  font-size: 24px;
+}
+
+.status-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-healthy {
+  background-color: var(--dot-healthy);
+}
+.dot-warning {
+  background-color: var(--dot-warning);
+}
+.dot-urgent  {
+  background-color: var(--dot-urgent);
+}
+
+.plant-name {
+  color: var(--color-plant-name);
+  font-size: 12px;
+}
+
+.plant-type {
+  color: var(--color-plant-type);
+  font-size: 10px;
+}
+
+.care-bar-wrap {
+  width: 100%;
+  min-height: 5px;
+  border-radius: 8px;
+  background-color: var(--bar-bg);
+}
+
+.care-bar {
+  height: 5px;
+  border-radius: 8px;
+}
+
+.bar-high      {
+  background-color: var(--bar-high);
+  width: 80%
+}
+.bar-medium    {
+  background-color: var(--bar-medium);
+  width: 50%
+}
+.bar-low       {
+  background-color: var(--bar-low);
+  width: 30%
+}
+.bar-critical  {
+  background-color: var(--bar-critical);
+  width: 10%
+}
+
+.next-water {
+  font-size: 10px;
+}
+
+.plant-healthy .next-water {
+  color: var(--color-water-text-healthy);
+}
+.plant-warning .next-water {
+  color: var(--color-water-text-warning);
+}
+.plant-urgent  .next-water {
+  color: var(--color-water-text-urgent);
+}
+
+.tracker-footer {
+  border-top: 1px solid var(--footer-border);
+  padding: .5rem 1rem;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.task-dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+}
+
+.task-done    {
+  background-color: var(--task-done-color);
+}
+.task-pending {
+  background-color: var(--task-pending-color);
+}
+
+.task-text {
+  color: var(--color-task-text);
+  font-weight: bold;
+}
+
+.task-date {
+  margin-left: auto;
+  color: var(--color-task-date);
+}
