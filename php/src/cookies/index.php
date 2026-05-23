@@ -2,14 +2,14 @@
 $value = 'Valor de prueba';
 
 // Establecer una "cookie de sesión" que caduca cuando se cierra el navegador
-//setcookie("TestCookie", $value);
+setcookie("TestCookie", $value);
 // Establecer una cookie que expira en 1 hora
 //setcookie("TestCookie", $value, time()+3600);
 // Establecer una cookie que se aplique solo a una ruta específica en un dominio específico.
 // Tenga en cuenta que el dominio utilizado debe coincidir con el dominio del sitio.
 // setcookie("TestCookie", $value, time()+3600, "/", "", false, false);
 // Para borrar una cookie, debemos setear su fecha de creacion a una fecha anterior
-setcookie("TestCookie", $value, time() - 3600, );
+// setcookie("TestCookie", $value, time() - 3600, );
 
 if (isset($_COOKIE['TestCookie'])) {
     echo 'Habemus dato <br />';

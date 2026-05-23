@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*, *::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+
+:root {
+  --color-card-bg: #ffffff;
+  --color-header-bg: #1a1a2e;
+  --color-header-text: #ffffff;
+  --color-gym-label: #a78bfa;
+  --color-title: #ffffff;
+  --color-badge-bg: #a78bfa;
+  --color-badge-text: #1a1a2e;
+  --color-yoga-accent: #34d399;
+  --color-spin-accent: #f97316;
+  --color-hiit-accent: #f43f5e;
+  --color-pilates-accent: #60a5fa;
+  --color-boxing-accent: #fbbf24;
+  --color-item-bg: #f8f7ff;
+  --color-item-border: #e9e7f5;
+  --color-time-text: #374151;
+  --color-name-text: #111827;
+  --color-meta-text: #6b7280;
+  --color-spots-text: #059669;
+  --color-spots-bg: #d1fae5;
+  --color-full-text: #dc2626;
+  --color-full-bg: #fee2e2;
+  --color-footer-bg: #f3f2fc;
+  --color-legend-text: #6b7280;
+  --color-dot-low: #fbbf24;
+  --color-dot-full: #dc2626;
+  --color-btn-bg: #a78bfa;
+  --color-btn-text: #1a1a2e;
+  --padding: 1rem;
+}
+
+body{
+     font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-color: #fafafa;
+}
+
+
+.schedule-card {
+    background-color: var(--color-card-bg);
+    width: 480px;
+    font-size: 12px;
+    border-radius: 12px;
+    overflow:clip;
+    margin: 20px auto;
+    
+}
+
+.card-header {
+    background-color: var(--color-header-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    padding: var(--padding);
+
+}
+
+.header-left {
+    color: var(--color-header-text);
+    display: flex;
+    flex-direction: column;
+}
+
+.gym-label {
+    color: var(--color-gym-label);
+    letter-spacing: 2px;
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.day-badge {
+    background-color: var(--color-badge-bg);
+    padding: calc(var(--padding)/2) var(--padding);
+    border-radius: 10px;
+    color: var(--color-badge-text);
+    line-height: var(--padding);
+    font-weight: bold;
+}
+
+.class-list {
+    padding: .5rem var(--padding);
+}
+
+.class-item {
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px 15px;
+    background-color: var(--color-item-bg);
+    border: 1px solid var(--color-item-border);
+    border-left-width: 4px;
+    margin-bottom: 5px;
+    gap: 15px;
+}
+
+.class-yoga { 
+    border-left-color: var(--color-yoga-accent);
+}
+.class-spin { 
+    border-left-color: var(--color-spin-accent);
+}
+.class-hiit {
+    border-left-color: var(--color-hiit-accent);
+ }
+.class-pilates { 
+    border-left-color: var(--color-pilates-accent);
+}
+.class-boxing { 
+    border-left-color: var(--color-boxing-accent);
+}
+
+.class-time {
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--color-time-text);
+}
+
+.class-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.class-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--color-name-text);
+    margin-bottom: 5px;
+}
+
+.class-meta {
+    color: var(--color-meta-text);
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.class-spots {
+    margin-left: auto;
+    padding: calc(var(--padding)/3)  .5rem;
+    border-radius: 12px;
+    font-size: 10px;
+    background-color: var(--color-spots-bg);
+    font-weight: bold;
+    color: var(--color-spots-text)
+}
+
+.class-spots.full {
+    background-color: var(--color-full-bg);
+    color: var(--color-full-text);
+}
+
+.card-footer {
+    background-color: var(--color-footer-bg);
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.legend-item {
+    color: var(--color-legend-text);
+}
+
+.legend-dot {
+    border-radius: 50%;
+    height: 10px;
+    width: 10px;
+    display: inline-block;
+}
+
+.dot-low { 
+    background-color: var(--color-dot-low);
+}
+.dot-full { 
+    background-color: var(--color-dot-full);
+}
+
+.legend-text {
+    font-weight: bold;
+}
+
+.book-btn {
+    background-color: var(--color-btn-bg);
+    border: none;
+    border-radius: 8px;
+    line-height: var(--padding);
+    padding: calc(var(--padding)/2);
+    text-transform: uppercase;
+    color: var(--color-btn-text);
+}
