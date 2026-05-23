@@ -5,7 +5,7 @@
 }
 
 :root{
-    --bg:#633974;
+    --bg:#4a155e;
     --bg-container: #a569bd;
     --bg-hover:#d2b4de;
     --font-c:#fafafa; 
@@ -55,7 +55,7 @@ body{
     height: var(--h-container);
     width: 80%;
     overflow: hidden;
-    scroll-behavior:smooth;
+   scroll-behavior:smooth;
 }
 
 .nav{

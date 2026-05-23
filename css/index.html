@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *, *::after, 
+        *::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+
+        :root{
+            --bg_color:#ffffff;
+        }
+
+        .container{
+            border: 2px solid red;
+        }
+
+        body{
+            background-color: var(--bg_color);
+        }
+
+        .container::after{
+            clear: both;
+        }
+
+        img{
+            width: 25%;
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        p{
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="Slider-html/assets/images/image_01.jpg" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure cumque corporis deleniti dolore quia explicabo laudantium vel. Laudantium ipsa dolor vero nemo quas temporibus, mollitia ut sed esse nulla incidunt.
+        Mollitia, eius dolorem! Dolorem accusamus ea deserunt totam est alias eum nostrum voluptatibus voluptate quisquam ipsam numquam, eaque facilis non fugit iste autem vel dignissimos modi quibusdam impedit, saepe odio.
+        Ut officiis quo, velit qui culpa minus nihil quidem, sed odio veritatis nisi deleniti atque cum debitis modi quos illum laudantium sint ea praesentium perspiciatis voluptatum id at. Iste, rerum.
+        Officiis modi voluptatem, asperiores dignissimos animi optio dolorem pariatur sequi obcaecati fugit cumque deleniti perferendis reprehenderit eaque quibusdam. Fugiat voluptate voluptates nam iusto vel laborum, labore quae quisquam mollitia iure.</p>
+    </div>
+    <div style="clear: both;"></div>
+</body>
+</html>
