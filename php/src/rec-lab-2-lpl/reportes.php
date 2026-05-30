@@ -9,6 +9,31 @@ if(!isSessionActive()) {
 
 $db = $_SESSION['db'] ?? [];
 
+$vecTotales=[];
+$vecTotalesServicios=[];
+$totalFacturado = 0;
+$vecTotales['moto'] = 0;
+$vecTotales['auto'] = 0;
+$vecTotales['camioneta'] = 0;
+
+$vecTotalesServicios['lavado-chasis'] = 0;
+$vecTotalesServicios['lavado-motor'] = 0;
+$vecTotalesServicios['interior'] = 0;
+$vecTotalesServicios['completo'] = 0;
+$vecTotalesServicios['encerado'] = 0;
+
+foreach ($db as $ticket){
+    if(isset($vecTotales[$ticket->getVehiculo()])){
+        $vecTotales[$ticket->getVehiculo()]++;
+    }
+    $totalFacturado += $ticket->getTotalTicket();
+    foreach ($ticket->getServicios() as $key => $value){
+        if(isset($vecTotalesServicios[$key])){
+            $vecTotalesServicios[$key]++;
+        }
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,26 +55,24 @@ $db = $_SESSION['db'] ?? [];
             <h1>Aún no se han registrados operaciones!</h1>
         <?php else:?>
             <h4>Total de operaciones registradas : <?= count($db) ?> </h4>
-        <?php
-            foreach ($db as $ticket):
-        ?>
-            <section class="reporte">
-                <p>
-                    <strong>Cliente:</strong> <?= $ticket->getFullName() ?>
-                    - <strong>Documento:</strong> <?= $ticket->getDocumento() ?>
-                    - <strong>Email:</strong> <?= $ticket->getEmail() ?>
-                </p>
-                <p>
-                    <strong>Factura tipo:</strong> <?= $ticket->getTipo() ?>
-                    - <strong>Vehiculo:</strong> <?= $ticket->getVehiculo() ?>
-                    - <strong>Formas de pago seleccionadas:</strong> <?= $ticket->getFormasPago() ?></p>
-                <p>Servicios realizados:</p>
-                <table> <?= $ticket->getDetalleTicket() ?></table>
-            </section>
 
-        <?php
-            endforeach;
-        ?>
+            <section class="reporte">
+               <h4>Resumen de vehiculos atendidos</h4>
+                <ul>
+                    <li>Total de motos: <?= $vecTotales['moto'] ?> </li>
+                    <li>Total de autos:  <?= $vecTotales['auto'] ?></li>
+                    <li>Total de camionetas: <?= $vecTotales['camioneta'] ?></li>
+                </ul>
+                <h4>Resumen de servicios realizados</h4>
+                <ul>
+                    <li>Lavado chasis: <?= $vecTotalesServicios['lavado-chasis'] ?> </li>
+                    <li>Lavado de motor:  <?= $vecTotalesServicios['lavado-motor'] ?></li>
+                    <li>Interior: <?= $vecTotalesServicios['interior'] ?></li>
+                    <li>Completo: <?= $vecTotalesServicios['completo'] ?></li>
+                    <li>Encerado: <?= $vecTotalesServicios['encerado'] ?></li>
+                </ul>
+                <h4>Total de ganancias registradas: $<?= $totalFacturado ?></h4>
+            </section>
 
         <?php
             endif;;

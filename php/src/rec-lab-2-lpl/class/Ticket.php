@@ -111,12 +111,7 @@ class Ticket
 
     public function getDetalleTicket()
     {
-        $porcentaje = 1;
-        if($this->vehiculo == 'moto'){
-            $porcentaje = .8;
-        } elseif ($this->vehiculo == 'caminoneta') {
-            $porcentaje = 1.2;
-        }
+        $porcentaje = $this->getPorcentaje();
 
         $result = '';
         $total = 0;
@@ -150,6 +145,34 @@ class Ticket
         }
 
         return substr($resutl, 0, strlen($resutl) -1);
+    }
+
+    /**
+     * @return float|int
+     */
+    private function getPorcentaje(): int|float
+    {
+        $porcentaje = 1;
+        if ($this->vehiculo == 'moto') {
+            $porcentaje = .8;
+        } elseif ($this->vehiculo == 'caminoneta') {
+            $porcentaje = 1.2;
+        }
+        return $porcentaje;
+    }
+
+    public function getTotalTicket(): float|int
+    {
+        $porcentaje = $this->getPorcentaje();
+
+        $total = 0;
+        foreach ($this->servicios as $key => $value ){
+            $costoServicio = $this->costServicio[$key] * $porcentaje;
+
+            $total += $costoServicio;
+        }
+
+        return $total;
     }
 
 }

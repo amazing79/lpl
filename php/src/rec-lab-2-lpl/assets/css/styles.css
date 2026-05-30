@@ -10,7 +10,7 @@ body{
     font-size: 16px;
 }
 
-h1, h2, h3, h4, h5, h6{
+h4 + ul, h1, h2, h3, h4, h5, h6{
     margin-bottom: 15px;
 }
 
@@ -190,4 +190,10 @@ article {
 .reporte{
     padding: 1rem;
     border: 1px solid;
+}
+
+h4 + ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
