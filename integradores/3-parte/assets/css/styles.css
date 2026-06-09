@@ -98,3 +98,9 @@ input, select{
     background-color: #74ae17;
     color: #fafafa;
 }
+
+.resume_ticket{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

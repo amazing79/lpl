@@ -37,7 +37,9 @@ $db = $_SESSION['tickets'] ?? [];
             <h4>Detalle viaje</h4>
             <p><strong>Fecha salida: </strong><?= $ticket->getFecha()?></p>
             <?php
+                $duracion = 0;
                 foreach ($ticket->getDestinos() as $destino):
+                    $duracion += $destino->getDuracion();
             ?>
 
             <div class="ticket_details">
@@ -53,6 +55,9 @@ $db = $_SESSION['tickets'] ?? [];
             <div class="resume_ticket">
                 <p><strong>Total paradas:</strong>
                     <?= count($ticket->getDestinos()) - 1 ?>
+                </p>
+                <p><strong>Duración aproximada:</strong>
+                    <?= $duracion ?> hs.
                 </p>
             </div>
         </section>
