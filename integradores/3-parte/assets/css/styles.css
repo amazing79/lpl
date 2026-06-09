@@ -1,0 +1,100 @@
+*, *::after,
+*::before{
+    padding: 0;
+    box-sizing: content-box;
+    margin: 0 0 5px;
+}
+
+html{
+    font-size: 14px;
+    font-family: Calibri, serif;
+}
+
+h1{
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5{
+    margin-bottom: 10px;
+}
+
+fieldset{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.button_container{
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+
+button{
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: dodgerblue;
+    color: ghostwhite;
+}
+
+button:hover{
+    background-color: #0f0f9c;
+}
+
+button:disabled{
+    background-color: #6d8aa3;
+    color: ghostwhite;
+}
+
+input, select{
+    padding: .3rem;
+    border-radius: 8px;
+}
+
+.container{
+    width: 100%;
+    max-width: 1024px;
+    margin: 20px auto;
+}
+
+.info_ticket{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 15px solid #b56138;
+    margin-bottom: 15px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.7);
+}
+
+.ticket_details{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    border-bottom: solid 1px black;
+    margin-bottom: 5px;
+}
+
+.chip{
+    padding: 7px 10px;
+    border-radius: 12px;
+    width: 90%;
+}
+
+.city{
+    background-color: #3876bd;
+    color: aliceblue;
+}
+
+.time{
+    background-color: #c531c2;
+    color: white;
+}
+
+.duration{
+    background-color: #74ae17;
+    color: #fafafa;
+}
