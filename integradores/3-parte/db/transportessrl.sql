@@ -27,7 +27,7 @@ CREATE TABLE `ciudades` (
   `idCiudad` int(11) NOT NULL AUTO_INCREMENT,
   `nombreDestino` varchar(255) NOT NULL,
   PRIMARY KEY (`idCiudad`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `destinos` (
   `hora_partida` time DEFAULT NULL,
   `hora_llegada` time DEFAULT NULL,
   `duracion` int(11) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
