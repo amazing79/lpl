@@ -10,6 +10,7 @@ function listarOrigins(){
     while($row = $result->fetch_object()){
         $data[$row->idCiudad] = $row;
     }
+    $con->close();
     return $data;
 }
 
@@ -26,6 +27,7 @@ function getDestinos(int $idOrigin)
     while($row = $result->fetch_object()){
         $data[] = $row;
     }
+    $con->close();
     return $data;
 }
 
@@ -37,6 +39,7 @@ function getDatosCiudad(int $idCiudad)
              ;";
     $con = new mysqli(HOST, USER, PASSWORD, DBNAME) or die();
     $result = $con->query($sql);
+    $con->close();
     return $result->fetch_object();
 }
 
@@ -52,7 +55,7 @@ function makeTramo($actual, $siguiente)
     $con = new mysqli(HOST, USER, PASSWORD, DBNAME) or die();
     $result = $con->query($sql);
     $horarios =  $result->fetch_object();
-
+    $con->close();
     return new InfoTicket(
         $origen->nombreDestino,
         $destino->nombreDestino,

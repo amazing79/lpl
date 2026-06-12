@@ -104,5 +104,5 @@ function printResult(){
         </form>
     </main>
 </body>
-<script src="assets/js/app.js"></script>
+<script src="assets/js/app-ajax.js"></script>
 </html>
