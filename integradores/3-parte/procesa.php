@@ -19,18 +19,13 @@ $ticket = new Ticket($apellido, $nombre, $dni, $fechaNacimiento, $email, $salida
 $actual = 'cbo_origin';
 $idx = 0;
 $total_destinos = $_POST['hdn_total'];
-if($total_destinos > 0){
-    while($idx <= $total_destinos){
-        $siguiente = 'destino_'.$idx;
-        $tramo = makeTramo($_POST[$actual], $_POST[$siguiente]);
-        $ticket->addDestino($tramo);
-        $actual = $siguiente;
-        $idx++;
-    }
-} else {
+
+while($idx <= $total_destinos){
     $siguiente = 'destino_'.$idx;
     $tramo = makeTramo($_POST[$actual], $_POST[$siguiente]);
     $ticket->addDestino($tramo);
+    $actual = $siguiente;
+    $idx++;
 }
 
 $db[] = $ticket;

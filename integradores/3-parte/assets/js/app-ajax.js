@@ -12,7 +12,7 @@ function callAjaxGetRequest(parameter, callback){
 
 function listarDestinos(){
     //this referencia al objeto ajax
-    if (this.readyState === 4 && this.status === 200){
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200){
         let cbo = document.getElementById('destino_0');
         let destinos = JSON.parse(this.responseText);
         let _html = '<option value="0">Seleccione destino</option>';
@@ -28,7 +28,7 @@ function listarDestinos(){
 
 function agregarTramo(){
     //this referencia al objeto ajax
-    if (this.readyState === 4 && this.status === 200){
+    if (this.readyState === XMLHttpRequest.DONE && this.status === 200){
         let result = JSON.parse(this.responseText);
         let destinos = result.data;
         if(destinos.length > 0) {
