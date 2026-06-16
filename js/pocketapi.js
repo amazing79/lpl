@@ -2,6 +2,30 @@ const start_url = 'https://pokeapi.co/api/v2/pokemon?limit=15'
 let nextUrl = null;
 let prevUrl = null;
 
+function getPokemonAjax(){
+    const ajax = new XMLHttpRequest();
+
+    ajax.open('GET', start_url, true);
+    ajax.onreadystatechange = listPokemon;
+    ajax.send();
+
+    function listPokemon(){
+        let list = document.getElementById('list');
+        let total = document.getElementById('count');
+        let html = '';
+        if (ajax.readyState === XMLHttpRequest.DONE && ajax.status === 200){
+            let data = JSON.parse(ajax.responseText);
+
+            data.results.forEach(pokemon => {
+                html += `<li><a href="${pokemon.url}">${pokemon.name}</a></li>`;
+            })
+            list.innerHTML = html;
+            nextUrl = data.next;
+            prevUrl = data.previous;
+            total.textContent = data.count;
+        }
+    }
+}
 function fetchPokemones(){
     let id = this.id;
     if (id == 'next') {
@@ -44,7 +68,8 @@ function init() {
     prev.addEventListener('click', fetchPokemones);
     next.addEventListener('click', fetchPokemones);
 
-    getPokemons();
+    //getPokemons();
+    getPokemonAjax();
     
 }
 
