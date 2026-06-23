@@ -25,17 +25,31 @@ function printResult(){
 <body>
     <main class="container">
         <h1>Transporte Sudestada SRL</h1>
-        <form name="ticket" method="post" action="procesa.php">
+        <section>
             <h2>Ticket System reservation 2.0</h2>
-            <?= printResult() ?>
+            <h3>Ingrese el documento del cliente que quiere reservar el pasaje</h3>
             <table>
                 <tbody>
+                <tr>
+                    <td>
+                        <label for="documento">Ingrese Documento:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="documento" id="documento" min="0" step="1" required>
+                        <button id="search" name="search">Buscar</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <?= printResult() ?>
+            <h3>Datos del cliente</h3>
+            <table class="cliente">
                 <tr>
                     <td>
                         <label for="apellido">Apellido</label>
                     </td>
                     <td>
-                        <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                        <span id="apellido"></span>
                     </td>
                 </tr>
                 <tr>
@@ -43,15 +57,7 @@ function printResult(){
                         <label for="nombre">Nombre:</label>
                     </td>
                     <td>
-                        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="documento">Documento:</label>
-                    </td>
-                    <td>
-                        <input type="number" name="documento" id="documento" min="0" step="1" required>
+                        <span id="nombre"></span>
                     </td>
                 </tr>
                 <tr>
@@ -59,7 +65,7 @@ function printResult(){
                         <label for="fecha_nacimiento">Fecha nacimiento:</label>
                     </td>
                     <td>
-                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required>
+                        <span id="fecha_nacimiento"></span>
                     </td>
                 </tr>
                 <tr>
@@ -67,7 +73,7 @@ function printResult(){
                         <label for="email">Email:</label>
                     </td>
                     <td>
-                        <input type="email" name="email" id="email" required>
+                        <span id="email"></span>
                     </td>
                 </tr>
                 </tbody>
@@ -97,12 +103,26 @@ function printResult(){
             </div>
             <div>
                 <fieldset class="button_container">
-                    <button type="submit" name="finalizar" id="finalizar">Comprar ticket</button>
+                    <button type="button" name="details" id="details">Mostrar detalle</button>
+                    <!--
                     <button type="button" name="agregar" id="tramo" disabled>Agregar tramo</button>
+                    -->
                 </fieldset>
             </div>
-        </form>
+        </section>
     </main>
+    <footer class="container">
+        <section class="hide info_ticket" id="display_details">
+            <h4>Detalle viaje</h4>
+            <div class="ticket_details">
+                <p class="chip city"><strong>Origen: </strong> <span id="city_origin"></span></p>
+                <p class="chip city"><strong>Destino: </strong> <span id="city_destination"></span></p>
+                <p class="chip time"><strong>Hora partida: </strong><span id="hora_salida"></span></p>
+                <p class="chip time"><strong>Hora llegada: </strong><span id="hora_llegad"></span></p>
+                <p class="chip duration"><strong>Duraci&oacute;n: </strong><span id="duracion"></span> hs.</p>
+            </div>
+        </section>
+    </footer>
 </body>
 <script src="assets/js/app-ajax.js"></script>
 </html>

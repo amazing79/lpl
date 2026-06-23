@@ -8,13 +8,9 @@ session_start();
 
 $db = $_SESSION['tickets'] ?? [];
 
-$apellido = $_POST['apellido'];
-$nombre = $_POST['nombre'];
-$dni = $_POST['documento'];
-$fechaNacimiento = $_POST['fecha_nacimiento'];
-$email = $_POST['email'];
+
 $salida = $_POST['fecha_salida'];
-$ticket = new Ticket($apellido, $nombre, $dni, $fechaNacimiento, $email, $salida);
+$ticket = new Ticket('jauregui', 'ignacio', '27553295   ', '14/12/1979', 'nachis@mail.com', $salida);
 
 $actual = 'cbo_origin';
 $idx = 0;

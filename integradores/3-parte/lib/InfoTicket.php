@@ -61,4 +61,14 @@ class InfoTicket{
         return $this->duracion;
     }
 
+    public function toArray(): array
+    {
+        return[
+            'origen' => $this->origen,
+            'destino' => $this->destino,
+            'hora_partida' => $this->hora_partida,
+            'hora_llegada' => $this->hora_llegada,
+            'duracion' => $this->duracion
+        ];
+    }
 }

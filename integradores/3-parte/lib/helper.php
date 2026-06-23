@@ -56,13 +56,25 @@ function makeTramo($actual, $siguiente)
     $result = $con->query($sql);
     $horarios =  $result->fetch_object();
     $con->close();
-    return new InfoTicket(
+    $response = new InfoTicket(
         $origen->nombreDestino,
         $destino->nombreDestino,
         $horarios->hora_partida,
         $horarios->hora_llegada,
         $horarios->duracion
     );
+    return $response->toArray();
+}
+
+function getClienteByDni($dni){
+    $sql = " SELECT c.idCliente, c.apellido, c.nombre, c.email, c.dni, c.fecha_nacimiento 
+             from clientes c
+             where dni = {$dni}
+             ;";
+    $con = new mysqli(HOST, USER, PASSWORD, DBNAME) or die();
+    $result = $con->query($sql);
+    $con->close();
+    return $result->fetch_object();
 }
 
 

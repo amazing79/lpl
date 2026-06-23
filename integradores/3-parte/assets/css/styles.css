@@ -10,6 +10,13 @@ html{
     font-family: Calibri, serif;
 }
 
+body{
+    background-color: #22292d;
+    color: #fafafa;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 h1{
     text-align: center;
 }
@@ -26,10 +33,32 @@ fieldset{
     gap: 10px;
 }
 
+label, span{
+    font-weight: bold;
+}
+
 .button_container{
     display: flex;
     justify-content: space-between;
     border: none;
+}
+
+table, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+td{
+    padding: .5em;
+}
+
+.cliente{
+    width: 100%;
+    max-width: 1024px;
+}
+
+.cliente :first-child{
+    width: 25%;
 }
 
 button{
@@ -61,12 +90,14 @@ input, select{
 }
 
 .info_ticket{
-    width: 100%;
     padding: 1rem;
     border-radius: 12px;
     border-left: 15px solid #b56138;
     margin-bottom: 15px;
     box-shadow: 1px 1px 10px rgba(0,0,0,.7);
+    background-color: #fafafa;
+    color: #22292d;
+    font-size: .9rem;
 }
 
 .ticket_details{
@@ -103,4 +134,8 @@ input, select{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.hide{
+    display: none;
 }

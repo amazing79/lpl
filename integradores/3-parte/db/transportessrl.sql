@@ -1,9 +1,9 @@
 /*M!999999\- enable the sandbox mode */ 
--- MariaDB dump 10.19-11.5.2-MariaDB, for Win64 (AMD64)
+-- MariaDB dump 10.19  Distrib 10.11.14-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: transportessrl
 -- ------------------------------------------------------
--- Server version	11.5.2-MariaDB
+-- Server version	10.11.14-MariaDB-0+deb12u2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,7 +14,7 @@
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
 -- Table structure for table `ciudades`
@@ -22,7 +22,7 @@
 
 DROP TABLE IF EXISTS `ciudades`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ciudades` (
   `idCiudad` int(11) NOT NULL AUTO_INCREMENT,
   `nombreDestino` varchar(255) NOT NULL,
@@ -54,12 +54,49 @@ INSERT INTO `ciudades` VALUES
 UNLOCK TABLES;
 
 --
+-- Table structure for table `clientes`
+--
+
+DROP TABLE IF EXISTS `clientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8mb4 */;
+CREATE TABLE `clientes` (
+  `idCliente` int(11) NOT NULL AUTO_INCREMENT,
+  `apellido` varchar(255) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `dni` int(11) NOT NULL,
+  `fecha_nacimiento` date DEFAULT NULL,
+  PRIMARY KEY (`idCliente`),
+  UNIQUE KEY `mail_unique` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clientes`
+--
+
+LOCK TABLES `clientes` WRITE;
+/*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
+INSERT INTO `clientes` VALUES
+(1,'Llauco','Nestor','nllauco@unmail.com',10100200,'1990-01-01'),
+(2,'Jauregui','Ignacio','rjauregui@ing.unp.edu.ar',10101201,'1990-01-01'),
+(3,'Viviers','Francisco','fviviers@mail.com',10102202,'1990-01-01'),
+(4,'Messi','Lionel','thegoat@mail.com',10101010,'2026-06-24'),
+(5,'Mbappe','Kylian','franchute@mail.com',10103203,'1998-12-20'),
+(6,'haaland','Erling','viking@mail.com',10104204,'2000-07-21'),
+(7,'Salah','Mohamed','vinagre@mail.com',10105205,'1992-06-15'),
+(8,'Ronaldo','Cristiano','narciso@mail.com',10106206,'1985-02-05');
+/*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `destinos`
 --
 
 DROP TABLE IF EXISTS `destinos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!40101 SET character_set_client = utf8mb4 */;
 CREATE TABLE `destinos` (
   `idOrigin` int(11) NOT NULL,
   `idDestino` int(11) NOT NULL,
@@ -114,6 +151,6 @@ UNLOCK TABLES;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-11 19:20:39
+-- Dump completed on 2026-06-23 15:50:37
