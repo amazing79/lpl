@@ -17,6 +17,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Current Database: `transportessrl`
+--
+
+/*!40000 DROP DATABASE IF EXISTS `transportessrl`*/;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `transportessrl` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
+
+USE `transportessrl`;
+
+--
 -- Table structure for table `ciudades`
 --
 
@@ -153,4 +163,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-23 15:50:37
+-- Dump completed on 2026-06-24 10:51:36
