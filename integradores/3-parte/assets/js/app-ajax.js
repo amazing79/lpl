@@ -12,21 +12,14 @@ function callAjaxGetRequest(parameter, callback){
     ajax.send(null);
 }
 
-function getCliente(dni, callback){
-    let url =  `./lib/clientes.php?dni=${dni}`;
+function callAjaxRequest(url, callback, options = {}){
+    let config = Object.assign({method:'GET', async:true, body:null}, options);
     let ajax = new XMLHttpRequest();
-    ajax.open('GET', url, true);
+    ajax.open(config.method, url, config.async);
     ajax.onreadystatechange = callback;
-    ajax.send(null);
+    ajax.send(config.body);
 }
 
-function getDetails(origen, destino, callback){
-    let url =  `./lib/details.php?origin=${origen}&destination=${destino}`;
-    let ajax = new XMLHttpRequest();
-    ajax.open('GET', url, true);
-    ajax.onreadystatechange = callback;
-    ajax.send(null);
-}
 
 function listarDestinos(){
     //this referencia al objeto ajax
@@ -127,14 +120,18 @@ function printDetails(){
 
 function searchClients(){
     let filter = document.getElementById('documento').value ?? 0;
-    getCliente(filter, showClientInfo);
+    let url = `./lib/clientes.php?dni=${filter}`;
+    // getCliente(filter, showClientInfo);
+    callAjaxRequest(url, showClientInfo);
 }
 
 function showDetails(){
     let origin = document.getElementById('origin').value;
     let destination = document.getElementById('destino_0').value;
-    if(origin != 0 &&  destination != 0 ){
-        getDetails(origin, destination, printDetails);
+    if(origin !== 0 &&  destination !== 0 ){
+        //getDetails(origin, destination, printDetails);
+        let url = `./lib/details.php?origin=${origin}&destination=${destination}`;
+        callAjaxRequest(url, printDetails);
     } else {
         alert('Debe seleccionar origen y destino para mostrar el detalle');
     }
@@ -144,7 +141,9 @@ function showDetails(){
 function agregarTramoAjax(){
     let cbo_tramo = document.getElementById(`destino_${total_destinos}`);
     let origin = cbo_tramo.value;
-    callAjaxGetRequest(origin, agregarTramo);
+    //callAjaxGetRequest(origin, agregarTramo);
+    let url =  `./lib/destinos.php?origin=${origin}`;
+    callAjaxRequest(url, agregarTramo);
 }
 
 function initEvents(){
@@ -154,7 +153,9 @@ function initEvents(){
     btn_search.addEventListener('click', searchClients);
     cbo.addEventListener('change', evt => {
         let value = evt.target.value;
-        callAjaxGetRequest(value, listarDestinos);
+        let url = `/lib/destinos.php?origin=${value}`;
+        //callAjaxGetRequest(value, listarDestinos);
+        callAjaxRequest(url, listarDestinos);
     })
 }
 
