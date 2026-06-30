@@ -13,7 +13,13 @@ function callAjaxGetRequest(parameter, callback){
 }
 
 function callAjaxRequest(url, callback, options = {}){
-    let config = Object.assign({method:'GET', async:true, body:null}, options);
+    // generar config usando Object.assign
+    //let config = Object.assign({method:'GET', async:true, body:null}, options);
+    // Generar config usando Spread Operator
+    let template = {method:'GET', async:true, body:null}
+    let config = { ...template , ...options }
+    console.info(config);
+
     let ajax = new XMLHttpRequest();
     ajax.open(config.method, url, config.async);
     ajax.onreadystatechange = callback;
@@ -154,8 +160,12 @@ function initEvents(){
     cbo.addEventListener('change', evt => {
         let value = evt.target.value;
         let url = `/lib/destinos.php?origin=${value}`;
+        let urlPost = '/lib/destinos.php';
+        let data = new FormData();
+        data.append('origin', value);
         //callAjaxGetRequest(value, listarDestinos);
-        callAjaxRequest(url, listarDestinos);
+        //callAjaxRequest(url, listarDestinos);
+        callAjaxRequest(urlPost, listarDestinos, { method:'POST', body:data});
     })
 }
 
